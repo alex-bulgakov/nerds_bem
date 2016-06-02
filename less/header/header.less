@@ -1,7 +1,38 @@
 .header {
+  background-color: #eeeeee;
 
+  &__container {
+    .container;
+  }
+
+  &__basket {
+    float: right;
+  }
 }
 
-.header__container {
-  .container;
+.logo  {
+  float: left;
+  margin-top: 25px;
 }
+
+.navigation {
+  float: left;
+
+  margin-top: 60px;
+
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline;
+  }
+  a {
+    font-size: 14px;
+    line-height: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: #000;
+  }
+}
+
