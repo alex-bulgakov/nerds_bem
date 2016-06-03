@@ -1,18 +1,54 @@
 .header {
   background-color: #eeeeee;
 
+  &__menu {
+    width: 100%;
+  }
+
   &__container {
     .container;
   }
 
   &__basket {
     float: right;
+
+    margin-top: 60px;
+    margin-right: 0;
+
+
+    text-align: right;
+
+    .icon-basket {
+      .font14;
+
+      color: black;
+
+      padding-left: 30px;
+    }
+    .icon-basket:hover {
+      color: @red;
+    }
+    .icon-basket:active {
+      color: black;
+      opacity: .3;
+    }
+    .icon-basket:active::before {
+      opacity: 1;
+    }
+
+    .icon-basket::before {
+      color: black;
+      margin-right: 8px;
+
+      opacity: .3;
+    }
   }
 }
 
 .logo  {
   float: left;
   margin-top: 25px;
+  margin-right: 180px;
 }
 
 .navigation {
@@ -24,15 +60,24 @@
     list-style: none;
   }
   li {
-    display: inline;
+    display: inline-block;
+    text-align: center;
+    margin-right: 40px;
   }
   a {
-    font-size: 14px;
-    line-height: 30px;
-    text-transform: uppercase;
-    text-decoration: none;
+    .font14;
 
     color: #000;
   }
+  a:hover {
+    color: @red;
+  }
+  a:active {
+    color: black;
+    opacity: .3;
+  }
+}
+.navigation--active {
+  border-bottom: 2px solid @red;
 }
 
