@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="UTF-8">
+  <title>Nerds</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,100,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/symbols-nerds.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+  <!--Yandex maps-->
+  <script>
+    ymaps.ready(init);
+    var myMap,
+            myPlacemark;
+
+    function init(){
+      myMap = new ymaps.Map("map", {
+        center: [46.513189,39.065965],
+        zoom: 15
+      });
+
+      var myPlacemark = new ymaps.Placemark([46.513189,39.065965], {
+        hintContent: 'Староминская',
+        balloonContent: 'Мой дом'
+      });
+
+      myMap.geoObjects.add(myPlacemark);
+    }
+
+
+  </script>
+</head>
+<body>
+
+  <header class="header">
+  <div class="header__container clearfix">
+    <div class="header__menu clearfix">
+      <a class="logo" href="index.html">
+        <img src="img/logo.png" alt="logo" width="139" height="56">
+      </a>
+      <nav class="navigation">
+        <ul>
+          <li><a href="#">Студия</a></li>
+          <li><a href="#">Клиенты</a></li>
+          <li class="navigation--active"><a href="catalog.html">Магазин</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header__basket">
+        <a class="icon-basket" href="#">Корзина</a>
+      </div>
+    </div>
+
+    <h1 class="header__title">
+      Добро пожаловать в магазин <br>
+      готовых макетов
+    </h1>
+  </div>
+</header>
+
+
+
+
+<div class="catalog__content">
+  <div class="catalog__container">
+    <div class="catalog__content-filter">
+      <form action="#" method="post" oninput="filtercost.value = cost.value;">
+        <div class="catalog__content-filter-cost">
+          <h3 class="catalog__content-filter-title">
+            Стоимость:
+          </h3>
+          <input type="range" name="cost" min="0" max="20000" value="15000">
+
+          <div class="catalog__content-filter-cost-descr">
+            <div class="catalog__content-filter-cost-descr-text">
+              от
+            </div>
+            <div class="catalog__content-filter-cost-descr-out">
+              0
+            </div>
+            <div class="catalog__content-filter-cost-descr-text">
+              до
+            </div>
+            <output class="catalog__content-filter-cost-descr" name="filtercost">
+              15000
+            </output>
+          </div>
+        </div>
+
+        <div class="catalog__content-filter-grid">
+          <h3 class="catalog__content-filter-title">
+            Сетка:
+          </h3>
+          <input type="radio" name="filter-grid" id="filter-grid1">
+          <input type="radio" name="filter-grid" id="filter-grid2">
+          <input type="radio" name="filter-grid" id="filter-grid3">
+
+          <label for="filter-grid1">Адаптивная</label>
+          <label for="filter-grid2">Фиксированная</label>
+          <label for="filter-grid3">Резиновая</label>
+        </div>
+
+        <div class="catalog__content-filter-features">
+          <h3 class="catalog__content-filter-title">
+            Особенности:
+          </h3>
+          <input type="checkbox" name="filter-features1" id="filter-features1">
+          <input type="checkbox" name="filter-features2" id="filter-features2">
+          <input type="checkbox" name="filter-features3" id="filter-features3">
+          <input type="checkbox" name="filter-features4" id="filter-features4">
+          <input type="checkbox" name="filter-features5" id="filter-features5">
+
+          <label for="filter-features1">Слайдер</label>
+          <label for="filter-features2">Блок преимуществ</label>
+          <label for="filter-features3">Новости</label>
+          <label for="filter-features4">Галерея</label>
+          <label for="filter-features5">Корзина</label>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="catalog__content-items">
+      <div class="catalog__content-items-filter">
+        <h3 class="catalog__content-items-filter-title">
+          Сортировать:
+        </h3>
+        <a href="#">По цене</a>
+        <a href="#">По типу</a>
+        <a href="#">По функционалу</a>
+
+        <div class="icon-up-dir"></div>
+        <div class="icon-down-dir"></div>
+      </div>
+
+      <div class="catalog__content-item catalog__content-item--1">
+        <div class="catalog__content-item-slider">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <img src="img/item1.jpg" alt="items" width="240" height="240">
+      </div>
+      <div class="catalog__content-item catalog__content-item--2">
+        <div class="catalog__content-item-slider">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <img src="img/item2.jpg" alt="items" width="240" height="240">
+      </div>
+      <div class="catalog__content-item catalog__content-item--3">
+        <div class="catalog__content-item-slider">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <img src="img/item3.jpg" alt="items" width="240" height="240">
+      </div>
+      <div class="catalog__content-item catalog__content-item--4">
+        <div class="catalog__content-item-slider">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <img src="img/item4.jpg" alt="items" width="240" height="240">
+      </div>
+      <div class="catalog__content-item catalog__content-item--5">
+        <div class="catalog__content-item-slider">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <img src="img/item5.jpg" alt="items" width="240" height="240">
+      </div>
+      <div class="catalog__content-item catalog__content-item--6">
+        <div class="catalog__content-item-slider">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <img src="img/item6.jpg" alt="items" width="240" height="240">
+      </div>
+
+
+    </div>
+
+    <div class="catalog__content-paginator">
+      <a href="#" class="catalog__content-paginator-link
+                        catalog__content-paginator-link--active">
+        1</a>
+      <a href="#" class="catalog__content-paginator-link">
+        2</a>
+      <a href="#" class="catalog__content-paginator-link">
+        3</a>
+      <a href="#" class="catalog__content-paginator-link">
+        Следующая</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<footer class="footer">
+
+  <div class="map">
+    <div id="map"></div>
+    <div class="map__container clearfix">
+      <div class="map__info">
+        <h3 class="map__info-title">
+          <b>Nёrds</b> design studio
+        </h3>
+
+        <p class="map__info-address">
+          350000, Краснодар,
+          ул. Головатого, 100
+        </p>
+
+        <p class="map__info-phone">
+          тел. +7 (861) 275-75-75
+        </p>
+        <a href="" class="btn btn--red">Напишите нам</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer__container clearfix">
+    <div class="footer__social">
+      <a class="icon-vk" href="#">vk.com</a>
+      <a class="icon-facebook" href="#">facebook.com</a>
+      <a class="icon-instagramm" href="#">instagramm.com</a>
+    </div>
+    <div class="footer__friends">
+      <h2 class="footer__friends-title">
+        Давайте дружить, это выгодно!
+      </h2>
+
+      <p>
+        Скидка 10% для друзей из социальных сетей.
+      </p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

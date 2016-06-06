@@ -1,0 +1,128 @@
+.content__main {
+  &-text {
+    float: left;
+
+    width: 620px;
+    margin-bottom: 45px;
+
+    &-title {
+      .font36;
+      margin-bottom: 15px;
+    }
+  }
+
+  &-logo {
+    position: relative;
+    float: right;
+
+    margin: 0;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #eeeeee;
+
+    &-info {
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+
+      margin-left: -52px;
+      padding: 0 10px;
+
+      text-align: center;
+      font-style: 16px;
+      line-height: 16px;
+      text-transform: uppercase;
+      font-weight: 500;
+
+      background-color: white;
+    }
+  }
+
+
+
+
+  &-list {
+    clear: both;
+
+    width: 100%;
+    padding-bottom: 50px;
+
+    border-bottom: 2px solid #eee;
+
+    &-left {
+      float: left;
+    }
+
+    &-right {
+      float: right;
+    }
+
+    &-item {
+      list-style: none;
+
+      li {
+        position: relative;
+        
+        padding-left: 35px;
+        margin-bottom: 25px;
+      }
+
+      li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 50%;
+
+
+        display: block;
+
+        width: 25px;
+        border-bottom: 2px solid @red;
+
+      }
+    }
+
+    &-title {
+      font-size: 16px;
+      line-height: 22px;
+      text-transform: uppercase;
+      font-weight: 500;
+
+      margin-bottom: 25px;
+    }
+  }
+
+
+
+
+  &-sites {
+
+    padding-top: 35px;
+    padding-bottom: 20px;
+    margin-bottom: 85px;
+
+    font-size: 0;
+
+    border-bottom: 2px solid #eee;
+
+    a {
+
+      display: inline-block;
+      vertical-align: middle;
+
+      width: 240px;
+      margin-right: 80px;
+
+      opacity: .3;
+    }
+
+    a:hover {
+      opacity: 1;
+    }
+
+    a:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+}

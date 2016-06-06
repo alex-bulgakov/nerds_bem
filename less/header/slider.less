@@ -1,7 +1,87 @@
-.slider__item {
-  display: none;
+.slider {
+  position: relative;
 
-  &--1 {
-    display: block;
+  width: 880px;
+  height: 350px;
+
+  input {
+    display: none;
   }
+
+  &__text {
+    position: absolute;
+    left: 0;
+    top: 70px;
+
+    width: 480px;
+  }
+
+  p {
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+  &__item {
+    position: absolute;
+    left: -2000px;
+
+    transition-duration: .1s;
+
+    height: 350px;
+    width: 880px;
+
+  }
+
+  &__image {
+    img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &__title1 {
+    .font36;
+    margin-bottom: 15px;
+  }
+
+
+  &__controls {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+
+
+    label {
+      display: inline-block;
+      vertical-align: middle;
+
+      width: 5px;
+      height:5px;
+
+      background: white;
+      border: 3px solid white;
+      border-radius: 50%;
+
+      cursor: pointer;
+    }
+  }
+
+  #slider1:checked ~ &__controls label[for="slider1"],
+  #slider2:checked ~ &__controls label[for="slider2"],
+  #slider3:checked ~ &__controls label[for="slider3"] {
+    background-color: #c1c1c1;
+  }
+
+  #slider1:checked ~ &__item--1,
+  #slider2:checked ~ &__item--2,
+  #slider3:checked ~ &__item--3 {
+    left: 0;
+  }
+
 }
+

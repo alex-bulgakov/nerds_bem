@@ -7,9 +7,33 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,100,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/symbols-nerds.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+  <!--Yandex maps-->
+  <script>
+    ymaps.ready(init);
+    var myMap,
+            myPlacemark;
+
+    function init(){
+      myMap = new ymaps.Map("map", {
+        center: [46.513189,39.065965],
+        zoom: 15
+      });
+
+      var myPlacemark = new ymaps.Placemark([46.513189,39.065965], {
+        hintContent: 'Староминская',
+        balloonContent: 'Мой дом'
+      });
+
+      myMap.geoObjects.add(myPlacemark);
+    }
+
+
+  </script>
 </head>
 <body>
-<header class="header">
+  <header class="header">
   <div class="header__container clearfix">
     <div class="header__menu clearfix">
       <a class="logo" href="index.html">
@@ -19,7 +43,7 @@
         <ul>
           <li class="navigation--active"><a href="#">Студия</a></li>
           <li><a href="#">Клиенты</a></li>
-          <li><a href="#">Магазин</a></li>
+          <li><a href="catalog.html">Магазин</a></li>
           <li><a href="#">Контакты</a></li>
         </ul>
       </nav>
@@ -30,19 +54,13 @@
 
 
 
-    <div class="slider">
-      <div class="slider__container">
+    <div class="slider clearfix"\>
+
         <input type="radio" name="slider" id="slider1" checked/>
         <input type="radio" name="slider" id="slider2"/>
         <input type="radio" name="slider" id="slider3"/>
 
-        <div class="slider__controls">
-          <label for="slider1"></label>
-          <label for="slider2"></label>
-          <label for="slider3"></label>
-        </div>
-
-        <div class="slider__item slider__item--1">
+        <div class="slider__item slider__item--1 clearfix">
           <div class="slider__text">
             <h2 class="slider__title1">
               Долго, дорого,
@@ -60,16 +78,16 @@
           </div>
         </div>
 
-        <div class="slider__item slider__item--2">
+        <div class="slider__item slider__item--2 clearfix">
           <div class="slider__text">
             <h2 class="slider__title1">
-              Долго, дорого,
-              скрупулезно.
+              Любите ли вы математику,
+              как любим ее мы?
             </h2>
 
             <p>
-              Математически выверенный дизайн
-              для вашего сайта или мобильного приложения.
+              Нашим дизайнерам мы удаляем нейроны, ответственные
+              за креатив, чтобы дать им возможность все просчитать
             </p>
             <a href="#" class="btn btn--red">Узнать больше</a>
           </div>
@@ -78,16 +96,16 @@
           </div>
         </div>
 
-        <div class="slider__item slider__item--3">
+        <div class="slider__item slider__item--3 clearfix">
           <div class="slider__text">
             <h2 class="slider__title1">
-              Долго, дорого,
-              скрупулезно.
+              Только наркотики,
+              только хардкор!
             </h2>
 
             <p>
-              Математически выверенный дизайн
-              для вашего сайта или мобильного приложения.
+              Все дизайнерские решения в нашей компании принимаются
+              только под воздействием качественных галлюциногенов
             </p>
             <a href="#" class="btn btn--red">Узнать больше</a>
           </div>
@@ -95,7 +113,13 @@
             <img src="img/slider3.png" alt="slider" width="333" height="319">
           </div>
         </div>
+
+      <div class="slider__controls">
+        <label for="slider1"></label>
+        <label for="slider2"></label>
+        <label for="slider3"></label>
       </div>
+
     </div>
   </div>
 </header>
@@ -104,7 +128,7 @@
 <div class="content">
   <div class="content__container">
 
-    <div class="content__features">
+    <div class="content__features clearfix">
       <div class="content__features-item">
         <img src="img/features1.png" alt="features" width="240" height="124">
 
@@ -154,53 +178,65 @@
     </div>
 
     <div class="content__main">
-      <div class="content__main-text">
+      <div class="content__main-text clearfix">
         <h1 class="content__main-text-title">
-          Мы — маленькая, но гордая
+          Мы — маленькая, но гордая <br>
           дизайн-студия из Краснодара.
         </h1>
 
         <p>
           Исповедуем принципы минимализма и чистоты.
-          Ставим математический расчет выше креатива.
+          Ставим математический <br> расчет выше креатива.
           Работаем не покладая рук, как роботы.
         </p>
       </div>
 
       <figure class="content__main-logo">
-        <img class="logo" src="img/logo.png" alt="logo" width="139" height="56">
+        <a href="index.html">
+          <img src="img/logo.png" alt="logo" width="139" height="56">
+        </a>
         <figcaption class="content__main-logo-info">
           Since 2004
         </figcaption>
       </figure>
 
-      <div class="content__main-lists">
-        <ul class="content__main-list-right">
-          <li>
-            Веб-сайтов любой сложности
-          </li>
-          <li>
-            Мобильных приложений для iOS и Android
-          </li>
-          <li>
-            Слайдшоу и видео для корпоративных презентаций
-          </li>
-        </ul>
+      <div class="content__main-list clearfix">
+        <div class="content__main-list-left">
+          <h3 class="content__main-list-title">
+            Выполняем заказы на разработку:
+          </h3>
+          <ul class="content__main-list-item">
+            <li>
+              Веб-сайтов любой сложности
+            </li>
+            <li>
+              Мобильных приложений для iOS и Android
+            </li>
+            <li>
+              Слайдшоу и видео для корпоративных презентаций
+            </li>
+          </ul>
+        </div>
 
-        <ul class="content__main-list-left">
-          <li>
-            С самоотдачей 146%
-          </li>
-          <li>
-            Соблюдая сроки на 100%
-          </li>
-          <li>
-            По предоплате 50%
-          </li>
-        </ul>
+        <div class="content__main-list-right">
+          <h3 class="content__main-list-title">
+            Как мы работаем:
+          </h3>
+          <ul class="content__main-list-item">
+            <li>
+              С самоотдачей 146%
+            </li>
+            <li>
+              Соблюдая сроки на 100%
+            </li>
+            <li>
+              По предоплате 50%
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div class="content__sites">
+      <div class="content__main-sites">
         <a href="#">
           <img src="img/site1.png" alt="sites" class="content__sites-item" width="198" height="37">
         </a>
@@ -216,10 +252,15 @@
 
   </div>
 
-  <div class="map">
-    <img src="img/map.jpg" alt="" class="map__image" width="1200" height="416">
 
-    <div class="map__container">
+</div>
+
+
+<footer class="footer">
+
+  <div class="map">
+    <div id="map"></div>
+    <div class="map__container clearfix">
       <div class="map__info">
         <h3 class="map__info-title">
           <b>Nёrds</b> design studio
@@ -236,28 +277,26 @@
         <a href="" class="btn btn--red">Напишите нам</a>
       </div>
 
-      <div class="map_pointer">
-        <img src="img/map_pointer.png" alt="" width="231" height="190">
-      </div>
     </div>
   </div>
-</div>
 
+  <div class="footer__container clearfix">
+    <div class="footer__social">
+      <a class="icon-vk" href="#">vk.com</a>
+      <a class="icon-facebook" href="#">facebook.com</a>
+      <a class="icon-instagramm" href="#">instagramm.com</a>
+    </div>
+    <div class="footer__friends">
+      <h2 class="footer__friends-title">
+        Давайте дружить, это выгодно!
+      </h2>
 
-<footer class="footer">
-  <div class="footer__social">
-    <a href="#">vk.com</a>
-    <a href="#">facebook.com</a>
-    <a href="#">instagramm.com</a>
-  </div>
-  <div class="footer__friends">
-    <h2 class="footer__friends-title">
-      Давайте дружить, это выгодно!
-    </h2>
-    <p>
-      Скидка 10% для друзей из социальных сетей.
-    </p>
+      <p>
+        Скидка 10% для друзей из социальных сетей.
+      </p>
+    </div>
   </div>
 </footer>
+
 </body>
 </html>
