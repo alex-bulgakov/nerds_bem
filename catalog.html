@@ -64,14 +64,17 @@
 
 
 <div class="catalog__content">
-  <div class="catalog__container">
+  <div class="catalog__container clearfix">
     <div class="catalog__content-filter">
       <form action="#" method="post" oninput="filtercost.value = cost.value;">
         <div class="catalog__content-filter-cost">
           <h3 class="catalog__content-filter-title">
             Стоимость:
           </h3>
-          <input type="range" name="cost" min="0" max="20000" value="15000">
+
+          <div class="catalog__content-filter-cost-range">
+            <input type="range" name="cost" min="0" max="20000" value="15000">
+          </div>
 
           <div class="catalog__content-filter-cost-descr">
             <div class="catalog__content-filter-cost-descr-text">
@@ -83,7 +86,7 @@
             <div class="catalog__content-filter-cost-descr-text">
               до
             </div>
-            <output class="catalog__content-filter-cost-descr" name="filtercost">
+            <output class="catalog__content-filter-cost-descr-out" name="filtercost">
               15000
             </output>
           </div>
@@ -93,13 +96,15 @@
           <h3 class="catalog__content-filter-title">
             Сетка:
           </h3>
-          <input type="radio" name="filter-grid" id="filter-grid1">
-          <input type="radio" name="filter-grid" id="filter-grid2">
-          <input type="radio" name="filter-grid" id="filter-grid3">
+          <input type="radio" name="filter-grid" id="filter-grid1" checked>
+          <label for="filter-grid1" class="icon-circle">Адаптивная</label>
 
-          <label for="filter-grid1">Адаптивная</label>
-          <label for="filter-grid2">Фиксированная</label>
-          <label for="filter-grid3">Резиновая</label>
+          <input type="radio" name="filter-grid" id="filter-grid2">
+          <label for="filter-grid2" class="icon-circle">Фиксированная</label>
+
+          <input type="radio" name="filter-grid" id="filter-grid3" disabled>
+          <label for="filter-grid3" class="icon-circle">Резиновая</label>
+
         </div>
 
         <div class="catalog__content-filter-features">
@@ -107,16 +112,20 @@
             Особенности:
           </h3>
           <input type="checkbox" name="filter-features1" id="filter-features1">
-          <input type="checkbox" name="filter-features2" id="filter-features2">
-          <input type="checkbox" name="filter-features3" id="filter-features3">
-          <input type="checkbox" name="filter-features4" id="filter-features4">
-          <input type="checkbox" name="filter-features5" id="filter-features5">
+          <label for="filter-features1" class="icon-check-off">Слайдер</label>
 
-          <label for="filter-features1">Слайдер</label>
-          <label for="filter-features2">Блок преимуществ</label>
-          <label for="filter-features3">Новости</label>
-          <label for="filter-features4">Галерея</label>
-          <label for="filter-features5">Корзина</label>
+          <input type="checkbox" name="filter-features2" id="filter-features2">
+          <label for="filter-features2" class="icon-check-off">Блок преимуществ</label>
+
+          <input type="checkbox" name="filter-features3" id="filter-features3">
+          <label for="filter-features3" class="icon-check-off">Новости</label>
+
+          <input type="checkbox" name="filter-features4" id="filter-features4">
+          <label for="filter-features4" class="icon-check-off">Галерея</label>
+
+          <input type="checkbox" name="filter-features5" id="filter-features5" disabled>
+          <label for="filter-features5" class="icon-check-off">Корзина</label>
+
         </div>
       </form>
     </div>
